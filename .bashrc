@@ -19,6 +19,16 @@ alias grep='grep --color'
 #gerbv Screen Geometry
 alias gerbv='gerbv --geometry 800x600'
 
+## Path Settings
+# For mac mini which doesn't have 'make' in the right spot
+export PATH=$PATH:/usr/local/bin:/Developer/usr/bin
+# For EPD-7.202
+PATH="/Library/Framework/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
+MKL_NUM_THREADS=1
+export MKL_NUM_THREADS
+
+
 #Console Only matlab -- Run File (and log)
 alias cmatlab='matlab -nojvm -nosplash -nodisplay -logfile Out.txt -r '
 #Console Only matabl -- shell
