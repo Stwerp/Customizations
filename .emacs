@@ -1,3 +1,11 @@
+;;; Stewart customizations :: 
+(setq sentence-end-double-space nil) ;period single space ends sentence
+
+;;; Auctex items
+(setq-default TeX-master nil) ; Query for master file
+(setq TeX-parse-self t)
+(setq TeX-auto-save t)
+
 ;; Stewart -- Feb 14 2012
 ;; open *help* in current frame (not a new frame/"window")
 (setq special-display-regexps (remove "[ ]?\\*[hH]elp.*" special-display-regexps))
@@ -59,6 +67,15 @@
 
 ;; Since I don't use 'column fill', set C-x f to open file the curser is on
 (global-set-key (kbd "C-x f") 'find-file-at-point)
+
+;; Auctex Preview stuff -- Good luck!
+;; ;; (load "auctex.el" nil t t)
+;; ;; (load "preview-latex.el" nil t t)
+;; Open a LaTeX file in Emacs and press
+;;    C-c C-p C-b (M-x preview-buffer) 
+;; to generate math/graphics previews for the entire buffer. After you update an equation, press
+;;    C-c C-p C-p (M-x preview-at-point)
+;; to refresh the preview.
 
 ;; -------------------------
 ;; Don't have to use M-x to run commands
