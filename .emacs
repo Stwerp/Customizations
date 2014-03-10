@@ -7,6 +7,7 @@
    (substring (emacs-version) 10 12))
 )
 
+
 ;; Load cedet (compiled only for v24, though!
 (if (version-check 24)
     (progn
@@ -268,8 +269,8 @@
 ;;      ps-number-of-columns 2)
 
 ;; JuliaLang mode
-(add-to-list 'load-path "~/.emacs.d/elisp/julia/")
-(require 'julia-mode)
+;;(add-to-list 'load-path "~/.emacs.d/elisp/julia/")
+;;(require 'julia-mode)
 
 ;; newLISP mode
 ;; ;; (load-file "~/Desktop/repo/newlisp-mode/newlisp.el")
@@ -290,15 +291,15 @@
 
 
 ;; Slime mode for LISP editing
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
 ;; Replace 'sbcl' with the path to yoru implementation ;; [done]
-(setq inferior-lisp-program (expand-file-name "~/lisp/ccl/scripts/ccl64"))
+;;(setq inferior-lisp-program (expand-file-name "~/lisp/ccl/scripts/ccl64"))
 
 
 ;; Chrome extension -- edit with emcs
-(add-to-list 'load-path "~/.emacs.d/elisp/edit-server/")
-(require 'edit-server)
-(edit-server-start)
+;;(add-to-list 'load-path "~/.emacs.d/elisp/edit-server/")
+;;(require 'edit-server)
+;;(edit-server-start)
 
 
 ;; Copy current buffer dir to kill ring (and display)
@@ -367,3 +368,15 @@
 ;; Add julia mode
 (add-to-list 'load-path "~/.emacs.d/elisp/julia-mode/")
 (require 'julia-mode)
+
+;; Add new scroll method
+(fset 'move-view-down
+   "\C-n\C-l")
+;;      ((next-line)
+;;       (recenter))
+(fset 'move-view-up
+   "\C-p\C-l")
+;;      (previous-line)
+;;      (recenter) )
+(global-set-key (kbd "M-n") 'move-view-down)
+(global-set-key (kbd "M-p") 'move-view-up)
